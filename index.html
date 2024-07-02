@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Document</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -110,6 +110,18 @@
     </div>
   </section>
 </body>
-<script src="./main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let day = document.querySelector("[data-testId='currentDay']");
+    let time = document.querySelector("[data-testId='currentTimeUTC']");
+
+    setInterval(() => {
+      let date = new Date();
+
+      day.textContent = date.toLocaleDateString("en-US", { weekday: "long" });
+      time.textContent = date.toLocaleTimeString("en-US", { timeZone: "UTC" });
+    }, 1000);
+  })
+</script>
 
 </html>
