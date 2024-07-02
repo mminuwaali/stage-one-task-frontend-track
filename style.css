@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+    background: #e3e3e3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #3e3e3e;
+  }
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+
+  :is(header, footer, section) {
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+}
+
+section#hero {
+  display: flex;
+  padding: 6% 10%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, white 70%, black 30%);
+
+  @media screen and (width <= 800px) {
+    padding: 5%;
+  }
+
+  .info {
+    gap: 1em;
+    flex: 1 auto;
+    display: flex;
+    padding: 0 4em;
+    flex-wrap: wrap;
+    background: white;
+    justify-content: center;
+    box-shadow: 0 0 1em rgba(0 0 0 / 0.1);
+
+    img {
+      width: 20em;
+      height: 20em;
+      margin: auto;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #000;
+      box-shadow: 0.2em 0.2em 0.5em rgba(0 0 0 / 0.4);
+    }
+
+    .intro {
+      padding: 5%;
+      flex: 2 20em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .line {
+        height: 0.2em;
+        background: black;
+        width: clamp(4em, 20%, 40em);
+        box-shadow: 0.3em 0.3em 0.2em rgba(0 0 0 / 0.2);
+
+        @media screen and (width <= 800px) {
+          width: 100%;
+        }
+      }
+
+      .user-data {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (width <= 800px) {
+          text-align: center;
+          align-items: center;
+        }
+
+        h1 {
+          font-weight: 700;
+          text-transform: capitalize;
+          font-size: clamp(2em, 3vw, 5em);
+        }
+
+        p {
+          font-size: 1em;
+          margin-top: 1em;
+          transform-origin: left;
+          font-family: sans-serif;
+          font-variant: small-caps;
+          transform: scaleX(1.6) scaleY(0.8);
+
+          @media screen and (width <= 800px) {
+            transform-origin: center;
+          }
+        }
+      }
+
+      .footer {
+        gap: 1em 4em;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (width <= 800px) {
+          justify-content: center;
+        }
+        .datetime {
+          gap: 1em;
+          display: flex;
+          font-variant: small-caps;
+          text-transform: lowercase;
+        }
+
+        .links {
+          gap: 1em;
+          display: flex;
+          align-items: center;
+
+          a {
+            color: #141e30;
+            text-underline-offset: 0.2em;
+            transition: 200ms ease-in-out;
+
+            &:hover {
+              color: gray;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section#goals {
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(to left, white 50%, black 50%);
+
+  & > div {
+    gap: 1em;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left {
+    flex: 1 18em;
+    background: black;
+    justify-content: space-between;
+
+
+    .line {
+      height: 0.2em;
+      background: white;
+      width: clamp(4em, 20%, 40em);
+      box-shadow: 0.3em 0.3em 0.2em rgba(0 0 0 / 0.2);
+
+      @media screen and (width <= 800px) {
+        width: 100%;
+      }
+    }
+    .description {
+      flex: 1 auto;
+      display: flex;
+      color: white;
+      flex-direction: column;
+
+      h1 {
+        font-weight: 700;
+        text-transform: capitalize;
+        font-size: clamp(2em, 3.5vw, 5em);
+      }
+
+      p {
+        font-size: 1em;
+        margin-top: 1em;
+        font-family: sans-serif;
+        font-variant: small-caps;
+        text-transform: lowercase;
+      }
+    }
+  }
+
+  .right {
+    flex: 2 20em;
+    background: white;
+
+    ol {
+      gap: 2em;
+      display: flex;
+      list-style: none;
+      counter-reset: item;
+      flex-direction: column;
+    }
+    ol > li {
+      margin-bottom: 5px;
+      counter-increment: item;
+    }
+    ol > li:before {
+      width: 2em;
+      height: 2em;
+      display: grid;
+      color: white;
+      padding: 0.25em;
+      font-size: 1.2em;
+      text-align: center;
+      border-radius: 50%;
+      background: black;
+      margin-right: 0.5em;
+      margin-bottom: 0.5em;
+      place-content: center;
+      display: inline-block;
+      content: counter(item);
+      font-family: sans-serif;
+    }
+  }
+}
