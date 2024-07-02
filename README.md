@@ -39,8 +39,8 @@ To set up the project locally, follow these steps:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/mminuwaali/stage-one-task-frontend-track.git
+    cd stage-one-task-frontend-track
     ```
 
 2. **Install dependencies**:
@@ -67,7 +67,6 @@ To set up the project locally, follow these steps:
 
 Open the website in your browser to view the content. The main sections include:
 
-- **Header**: Contains the navigation links and a brief introduction.
 - **Main Content**: Outlines my tech goals for the next 2 years.
 - **Footer**: Displays the current time in UTC, current day, Slack profile information, and useful links.
 
@@ -100,4 +99,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any questions or feedback, please contact me at [mminuwaali@gmail.com].
 ```
 
-Make sure to replace the placeholders like `https://github.com/your-username/your-repo-name.git`, `path_to_your_profile_picture`, and `mminuwaali@gmail.com` with the actual information relevant to your project.
+Make sure to replace the placeholders like `https://github.com/mminuwaali/stage-one-task-frontend-track.git`, `path_to_your_profile_picture`, and `mminuwaali@gmail.com` with the actual information relevant to your project.
